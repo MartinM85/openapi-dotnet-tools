@@ -6,7 +6,7 @@
     <ImplicitUsings>false</ImplicitUsings>
     <Copyright>Copyright © 2023</Copyright>
     <PackAsTool>True</PackAsTool>
-    <Authors>MartinMachacek</Authors>
+    <Authors>Macháček Martin</Authors>
     <PackageId>Machy.OpenApi.Tools.Cli</PackageId>
     <Title>Markdown and markmap files command line generator for Open API document</Title>
     <RepositoryUrl>https://github.com/MartinM85/openapi-dotnet-tools</RepositoryUrl>
