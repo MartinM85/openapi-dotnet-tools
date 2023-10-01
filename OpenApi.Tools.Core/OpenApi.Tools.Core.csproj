@@ -12,7 +12,7 @@
     <RepositoryUrl>https://github.com/MartinM85/openapi-dotnet-tools</RepositoryUrl>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <PackageId>OpenApi.Tools.Core</PackageId>
+    <PackageId>Machy.OpenApi.Tools.Core</PackageId>
     <PackageProjectUrl>https://github.com/MartinM85/openapi-dotnet-tools</PackageProjectUrl>
     <Platforms>AnyCPU;x64;ARM64</Platforms>
   </PropertyGroup>

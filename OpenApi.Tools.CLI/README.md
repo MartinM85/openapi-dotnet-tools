@@ -1,6 +1,6 @@
 # OpenAPI Tools CLI
 
-[![NuGet Version](https://buildstats.info/nuget/OpenApi.Tools.Cli)](https://www.nuget.org/packages/OpenApi.Tools.Cli/)
+[![NuGet Version](https://buildstats.info/nuget/Machy.OpenApi.Tools.Cli)](https://www.nuget.org/packages/Machy.OpenApi.Tools.Cli/)
 
 The console application that generates markdown files and markmap files from Open API definition to visualize endpoints and schemas.
 
@@ -8,7 +8,7 @@ The console application that generates markdown files and markmap files from Ope
 
 To install the tool, run the command:
 
-`dotnet tool install --global OpenApi.Tools.Cli`
+`dotnet tool install --global Machy.OpenApi.Tools.Cli`
 
 ## Prerequisities
 
