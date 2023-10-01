@@ -1,6 +1,6 @@
 # OpenAPI Tools library
 
-[![NuGet Version](https://buildstats.info/nuget/OpenApi.Tools.Core)](https://www.nuget.org/packages/OpenApi.Tools.Core/)
+[![NuGet Version](https://buildstats.info/nuget/Machy.OpenApi.Tools.Core)](https://www.nuget.org/packages/Machy.OpenApi.Tools.Core/)
 
 The .NET library allows you to:
 - Load Open API document from file, URL, or any Stream in general
@@ -16,8 +16,8 @@ The .NET library allows you to:
 
 To install the client library via NuGet:
 
-* Search for `OpenApi.Tools.Core` in the NuGet Library, or
-* Type `Install-Package OpenApi.Tools.Core` into the Package Manager Console.
+* Search for `Machy.OpenApi.Tools.Core` in the NuGet Library, or
+* Type `Install-Package Machy.OpenApi.Tools.Core` into the Package Manager Console.
 
 ## Prerequisities
 

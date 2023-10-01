@@ -19,7 +19,7 @@ The repository contains
 
 ## OpenAPI Tools command line
 
-[![NuGet Version](https://buildstats.info/nuget/OpenApi.Tools.Cli)](https://www.nuget.org/packages/OpenApi.Tools.Cli/)
+[![NuGet Version](https://buildstats.info/nuget/Machy.OpenApi.Tools.Cli)](https://www.nuget.org/packages/Machy.OpenApi.Tools.Cli/)
 
 The console application that generates Markdown files and markmap files.
 
@@ -27,14 +27,14 @@ The console application that generates Markdown files and markmap files.
 
 To install the tool via `dotnet tool`:
 
-* Run the command `dotnet tool install --global OpenApi.Tools.Cli`
+* Run the command `dotnet tool install --global Machy.OpenApi.Tools.Cli`
 
 Read more: [OpenAPI Tools CLI](OpenApi.Tools.CLI/README.md)
 
 
 ## OpenAPI Tools library
 
-[![NuGet Version](https://buildstats.info/nuget/OpenApi.Tools.Core)](https://www.nuget.org/packages/OpenApi.Tools.Core/)
+[![NuGet Version](https://buildstats.info/nuget/Machy.OpenApi.Tools.Core)](https://www.nuget.org/packages/Machy.OpenApi.Tools.Core/)
 
 The .NET library that generates Markdown files and markmap files.
 
