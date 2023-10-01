@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+    <ImplicitUsings>false</ImplicitUsings>
+    <Copyright>Copyright © 2023</Copyright>
+    <PackAsTool>True</PackAsTool>
+    <Authors>Martin Machacek</Authors>
+    <PackageId>OpenApi.Tools.Cli</PackageId>
+    <Title>Markdown and markmap files command line generator for Open API document</Title>
+    <RepositoryUrl>https://github.com/MartinM85/openapi-dotnet-tools</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/MartinM85/openapi-dotnet-tools</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageTags>OpenAPI;.NET;markmap;markdown</PackageTags>
+    <Description>Generates Markdown and markmap files from Open API document</Description>
+    <ToolCommandName>openapi-markmap-tool</ToolCommandName>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <Platforms>AnyCPU;x64;ARM64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OpenApi.Tools.Core\OpenApi.Tools.Core.csproj" />
+  </ItemGroup>
+
+</Project>

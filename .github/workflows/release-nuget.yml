@@ -1,0 +1,56 @@
+name: Release core library and command tool
+
+on:
+  workflow_dispatch:
+    
+jobs:
+  build-and-push:
+
+    env:
+      BUILD_CONFIG: 'Release'
+      SOLUTION: 'OpenApi.Tools.sln'
+      CORE_PROJECT: 'OpenApi.Tools.Core/OpenApi.Tools.Core.csproj'
+      TOOL_PROJECT: 'OpenApi.Tools.CLI/OpenApi.Tools.Cli.csproj'
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Install GitVersion
+      uses: gittools/actions/gitversion/setup@v0.10.2
+      with:
+        versionSpec: '5.x'
+    
+    - name: Determine Version
+      uses: gittools/actions/gitversion/execute@v0.10.2
+      with:
+        useConfigFile: true
+        configFilePath: GitVersion.yml
+        additionalArguments: /updateprojectfiles
+
+    - uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: | 
+          6.x
+          7.x
+
+    - name: Restore core project
+      run: dotnet restore $CORE_PROJECT
+
+    - name: Restore tool project
+      run: dotnet restore $TOOL_PROJECT
+
+    - name: Build solution
+      run: dotnet build $SOLUTION --configuration $BUILD_CONFIG --no-restore
+    
+    - name: Create nuget package for core
+      run: dotnet pack $CORE_PROJECT -c $BUILD_CONFIG --no-build --no-restore --output .
+
+    - name: Create nuget package for tool
+      run: dotnet pack $TOOL_PROJECT -c $BUILD_CONFIG --no-build --no-restore --output .
+
+    - name: Push packages to nuget
+      run: dotnet nuget push *.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_API_KEY}} --skip-duplicate

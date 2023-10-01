@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "OpenApi.Tools.Cli": {
+      "commandName": "Project",
+      "commandLineArgs": ""
+    }
+  }
+}

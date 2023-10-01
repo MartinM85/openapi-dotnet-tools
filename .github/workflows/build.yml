@@ -1,0 +1,39 @@
+name: Build solution
+
+on:
+  push:
+    branches:
+    - main
+    - feature/*
+  pull_request:
+    branches:
+    - main
+    
+jobs:
+  build:
+
+    env:
+      BUILD_CONFIG: 'Release'
+      SOLUTION: 'OpenApi.Tools.sln'
+      CORE_PROJECT: 'OpenApi.Tools.Core/OpenApi.Tools.Core.csproj'
+      TOOL_PROJECT: 'OpenApi.Tools.CLI/OpenApi.Tools.Cli.csproj'
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: | 
+          6.x
+          7.x
+  
+    - name: Restore core project
+      run: dotnet restore $CORE_PROJECT
+
+    - name: Restore tool project
+      run: dotnet restore $TOOL_PROJECT
+
+    - name: Build
+      run: dotnet build $SOLUTION --configuration $BUILD_CONFIG --no-restore

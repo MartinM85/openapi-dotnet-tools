@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Title>Open API Tools</Title>
+    <Authors>Martin Machacek</Authors>
+    <Description>Allows to read Open API document, list all endpoints/schemas, search for endpoints/schemas, generate Markdown files for selected endpoints/schemas, generate markmap files from Markdown files.</Description>
+    <Copyright>Copyright © 2023</Copyright>
+    <PackageTags>OpenAPI;.NET;markmap;markdown</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/MartinM85/openapi-dotnet-tools</RepositoryUrl>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <PackageId>OpenApi.Tools.Core</PackageId>
+    <PackageProjectUrl>https://github.com/MartinM85/openapi-dotnet-tools</PackageProjectUrl>
+    <Platforms>AnyCPU;x64;ARM64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.9" />
+  </ItemGroup>
+	<ItemGroup>
+		<None Include="..\LICENSE.txt">
+			<Pack>True</Pack>
+			<PackagePath>\LICENSE.txt</PackagePath>
+		</None>
+	</ItemGroup>
+	<ItemGroup>
+	  <None Include="README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
+
+</Project>
