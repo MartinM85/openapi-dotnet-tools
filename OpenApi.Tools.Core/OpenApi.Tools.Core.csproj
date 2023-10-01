@@ -4,7 +4,7 @@
     <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
     <Title>Open API Tools</Title>
-    <Authors>Martin Machacek</Authors>
+    <Authors>MartinMachacek</Authors>
     <Description>Allows to read Open API document, list all endpoints/schemas, search for endpoints/schemas, generate Markdown files for selected endpoints/schemas, generate markmap files from Markdown files.</Description>
     <Copyright>Copyright © 2023</Copyright>
     <PackageTags>OpenAPI;.NET;markmap;markdown</PackageTags>
