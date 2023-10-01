@@ -1,0 +1,30 @@
+User
+
+gen-endpoint-markdown-file file --input-file C:\\Temp\\OpenApi\\transformed_v1.0_metadata.xml.yaml --endpoint /users --output-file C:\\Temp\\User.md
+gen-markmap-file --input-file C:\\Temp\\User.md --output-file C:\\Temp\\OpenApi\\User.html
+
+/deviceManagement/userExperienceAnalyticsDevicePerformance/summarizeDevicePerformanceDevices(summarizeBy='{summarizeBy}')
+
+gen-schema-markdown-file file --input-file C:\\Temp\\OpenApi\\transformed_v1.0_metadata.xml.yaml --schema microsoft.graph.user --output-file C:\\Temp\\OpenAPI\\_schema\\User.md -x 2
+gen-markmap-file --input-file C:\\Temp\\OpenApi\\_schema\\User.md --output-file C:\\Temp\\OpenApi\\_schema\\User.html
+
+
+gen-endpoint-markdown-files file --input-file C:\\Temp\\OpenApi\\transformed_v1.0_metadata.xml.yaml --search-pattern ^(.*) --output-folder C:\\Temp\\OpenAPI\\v1.0
+gen-schema-markdown-files file --input-file C:\\Temp\\OpenApi\\transformed_v1.0_metadata.xml.yaml --search-pattern ^(.*) --output-folder C:\\Temp\\OpenAPI\\v1.0_schema
+gen-endpoint-markdown-files file --input-file C:\\Temp\\OpenApi\\transformed_beta_metadata.xml.yaml --search-pattern ^(.*) --output-folder C:\\Temp\\OpenAPI\\beta
+gen-schema-markdown-files file --input-file C:\\Temp\\OpenApi\\transformed_beta_metadata.xml.yaml --search-pattern ^(.*) --output-folder C:\\Temp\\OpenAPI\\beta_schema
+
+gen-markmap-files --input-folder C:\\Temp\\OpenAPI\\v1.0_schema --output-folder C:\\Temp\\OpenAPI\\v1.0_schema
+
+
+gen-markmap-file --input-file C:\\Temp\\OpenApi\\v1.0\\servicePrincipals\\endpoint.md --output-file C:\\Temp\\OpenApi\\v1.0\\servicePrincipals\\endpoint.html
+gen-markmap-file --input-file C:\\Temp\\OpenApi\\v1.0_schema\\microsoft.graph.message.md --output-file C:\\Temp\\OpenApi\\v1.0_schema\\microsoft.graph.message.html
+
+gen-schema-markdown-file file --input-file C:\\Temp\\OpenApi\\transformed_v1.0_metadata.xml.yaml --schema microsoft.graph.obliterationBehavior --output-file C:\\Temp\\OpenAPI\\_schema\\microsoft.graph.obliterationBehavior.md
+
+
+list-endpoints file --input-file C:\\Temp\\OpenApi\\transformed_v1.0_metadata.xml.yaml
+list-schemas file --input-file C:\\Temp\\OpenApi\\transformed_v1.0_metadata.xml.yaml
+
+gen-endpoint-markdown-file file --input-file C:\\Temp\\OpenApi\\transformed_v1.0_metadata.xml.yaml --endpoint /me/calendarView/delta() --output-file C:\\Temp\\User.md
+gen-markmap-file --input-file C:\\Temp\\OpenApi\\v1.0\\me\\calendarView\\delta()\\endpoint.md --output-file C:\\Temp\\OpenApi\\v1.0\\me\\calendarView\\delta()\\endpoint.html

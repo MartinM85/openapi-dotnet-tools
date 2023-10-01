@@ -1,0 +1,48 @@
+name: Release markmap viewer
+
+on:
+  workflow_dispatch:
+    
+jobs:
+  build:
+
+    env:
+      BUILD_CONFIG: 'Release'
+      SOLUTION: 'OpenApi.Tools.sln'
+      BROWSER_PROJECT: 'OpenApi.Tools.MarkmapViewer\\OpenApi.Tools.MarkmapViewer.csproj'
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: | 
+          6.x
+          7.x
+
+    - uses: microsoft/setup-msbuild@v1.3.1
+  
+    - name: Restore dependencies
+      run: dotnet restore $SOLUTION
+
+    - name: Install .NET workloads
+      shell: pwsh
+      run: |
+        dotnet workload install maccatalyst
+        dotnet workload install maui-windows
+        dotnet workload install maui-maccatalyst
+
+    - name: Restore MarkmapViewer WinUI
+      run: dotnet restore OpenApi.Tools.MarkmapViewer/OpenApi.Tools.MarkmapViewer.csproj
+
+    - name: Build MarkmapViewer WinUI
+      run: dotnet build OpenApi.Tools.MarkmapViewer/OpenApi.Tools.MarkmapViewer.csproj --configuration Release -f net7.0-windows10.0.22621.0 --no-restore -p:PublishTrimmed=False -p:PublishReadyToRun=false -p:Platform=x64
+
+    - name: Restore MarkmapViewer MacCatalyst
+      run: dotnet restore OpenApi.Tools.MarkmapViewer/OpenApi.Tools.MarkmapViewer.csproj
+
+    - name: Build MarkmapViewer MacCatalyst
+      shell: bash
+      run: dotnet build $BROWSER_PROJECT --configuration $BUILD_CONFIG -f net7.0-maccatalyst --no-restore -p:PublishTrimmed=True -p:MtouchLink=SdkOnly -p:Platform=osx-arm64

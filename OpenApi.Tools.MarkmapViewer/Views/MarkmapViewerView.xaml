@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OpenApi.Tools.MarkmapViewer.Views.MarkmapViewerView"
+             Shell.NavBarIsVisible="False">
+    <VerticalStackLayout>
+        <HorizontalStackLayout x:Name="header1">
+            <Label Text="Folder:" VerticalTextAlignment="Center" Margin="5"/>
+            <Entry Text="{Binding InputFolder}" WidthRequest="600" Margin="5"/>
+            <Label Text="File pattern:" VerticalTextAlignment="Center" Margin="5"/>
+            <Entry Text="{Binding SearchPattern}" WidthRequest="200" Margin="5"/>
+            <Label Text="Show file name:" VerticalTextAlignment="Center" Margin="5"/>
+            <CheckBox IsChecked="{Binding IncludeFileName}" Margin="5"/>
+            <Button Text="Load items" Command="{Binding LoadItemsCommand}" Margin="5"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout x:Name="header2">
+            <Picker Title="Items" x:Name="picker" ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}" WidthRequest="1000" Margin="5"/>
+            <Button Text="Previous" Command="{Binding ShowPreviousItemCommand}" Margin="5" WidthRequest="90" HeightRequest="40" VerticalOptions="End"/>
+            <Button Text="Next" Command="{Binding ShowNextItemCommand}" Margin="5" WidthRequest="90" HeightRequest="40" VerticalOptions="End"/>
+        </HorizontalStackLayout>
+        <Border BackgroundColor="WhiteSmoke">
+            <WebView x:Name="webView" Source="{Binding PreviewUrl}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="900" WidthRequest="1800"/>
+        </Border>
+    </VerticalStackLayout>
+</ContentPage>
