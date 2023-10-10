@@ -51,7 +51,13 @@ Read more: [OpenAPI Tools library](OpenApi.Tools.Core/README.md)
 
 The application which allows you to display and browse markmap files.
 
-Read more: [Markmap files viewer](OpenApi.Tools.MarkmapViewer/README.md)
+### MAUI
+
+Read more: [Markmap files viewer MAUI](OpenApi.Tools.MarkmapViewer/README.md)
+
+### WPF
+
+Read more: [Markmap files viewer WPF](OpenApi.Tools.MarkmapViewer/README.md)
 
 ## Change appearance
 

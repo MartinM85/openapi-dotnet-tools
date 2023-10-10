@@ -1,0 +1,41 @@
+﻿<Window x:Class="OpenApi.Tools.MarkmapViewer.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+        xmlns:local="clr-namespace:OpenApi.Tools.MarkmapViewer.WPF"
+        mc:Ignorable="d"
+        Title="Markmap file viewer" Height="1000" Width="1400">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal" x:Name="header1">
+                <Label Margin="5">Folder:</Label>
+                <TextBox Margin="5" Width="600" Text="{Binding InputFolder}" VerticalContentAlignment="Center"></TextBox>
+                <Label Margin="5">File pattern:</Label>
+                <TextBox Margin="5" Width="200" Text="{Binding SearchPattern}" VerticalContentAlignment="Center"></TextBox>
+                <Label Margin="5">Show file name:</Label>
+                <CheckBox Margin="5" IsChecked="{Binding IncludeFileName}" VerticalAlignment="Center"/>
+                <Button Margin="5" Command="{Binding LoadItemsCommand}">Load items</Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" x:Name="header2">
+                <Label Margin="5">Items:</Label>
+                <ComboBox Width="1000" Height="25" ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}" IsTextSearchEnabled="True"
+                          VirtualizingStackPanel.IsVirtualizing="True" VirtualizingStackPanel.VirtualizationMode="Recycling">
+                    <ComboBox.ItemsPanel>
+                        <ItemsPanelTemplate >
+                            <VirtualizingStackPanel/>
+                        </ItemsPanelTemplate>
+                    </ComboBox.ItemsPanel>
+                </ComboBox>
+                <Button Width="90" Command="{Binding ShowPreviousItemCommand}" Margin="5">Previous</Button>
+                <Button Width="90" Command="{Binding ShowNextItemCommand}" Margin="5">Next</Button>
+            </StackPanel>
+            <Border>
+                <wv2:WebView2 x:Name="webView" Source="{Binding PreviewUrl}">
+
+                </wv2:WebView2>
+            </Border>
+        </StackPanel>
+    </Grid>
+</Window>
